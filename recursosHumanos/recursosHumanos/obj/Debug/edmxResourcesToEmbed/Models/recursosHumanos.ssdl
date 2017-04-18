@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="recursosHumanosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="administrador">
+    <Key>
+      <PropertyRef Name="cedula" />
+    </Key>
+    <Property Name="cedula" Type="int" Nullable="false" />
+    <Property Name="profesion" Type="varchar" MaxLength="30" />
+    <Property Name="creditos" Type="int" />
+  </EntityType>
+  <EntityType Name="comentario">
+    <Key>
+      <PropertyRef Name="idcomentario" />
+    </Key>
+    <Property Name="idcomentario" Type="int" Nullable="false" />
+    <Property Name="cedulaempleado" Type="int" />
+    <Property Name="tipocomentario" Type="varchar" MaxLength="10" />
+    <Property Name="comentario" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="cedula" />
+    </Key>
+    <Property Name="cedula" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" />
+    <Property Name="edad" Type="int" />
+    <Property Name="telefono" Type="varchar" MaxLength="10" />
+    <Property Name="añoingreso" Type="int" />
+    <Property Name="tipoempleado" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ingeniero">
+    <Key>
+      <PropertyRef Name="cedula" />
+    </Key>
+    <Property Name="cedula" Type="int" Nullable="false" />
+    <Property Name="area" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="operario">
+    <Key>
+      <PropertyRef Name="cedula" />
+    </Key>
+    <Property Name="cedula" Type="int" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK__administr__cedul__182C9B23">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
+    <End Role="administrador" Type="Self.administrador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="administrador">
+        <PropertyRef Name="cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__comentari__cedul__1B0907CE">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+    <End Role="comentario" Type="Self.comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="comentario">
+        <PropertyRef Name="cedulaempleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ingeniero__cedul__1920BF5C">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
+    <End Role="ingeniero" Type="Self.ingeniero" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="ingeniero">
+        <PropertyRef Name="cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__operario__cedula__1A14E395">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
+    <End Role="operario" Type="Self.operario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="cedula" />
+      </Principal>
+      <Dependent Role="operario">
+        <PropertyRef Name="cedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="recursosHumanosModelStoreContainer">
+    <EntitySet Name="administrador" EntityType="Self.administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="comentario" EntityType="Self.comentario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ingeniero" EntityType="Self.ingeniero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="operario" EntityType="Self.operario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__administr__cedul__182C9B23" Association="Self.FK__administr__cedul__182C9B23">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="administrador" EntitySet="administrador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__comentari__cedul__1B0907CE" Association="Self.FK__comentari__cedul__1B0907CE">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="comentario" EntitySet="comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ingeniero__cedul__1920BF5C" Association="Self.FK__ingeniero__cedul__1920BF5C">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="ingeniero" EntitySet="ingeniero" />
+    </AssociationSet>
+    <AssociationSet Name="FK__operario__cedula__1A14E395" Association="Self.FK__operario__cedula__1A14E395">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="operario" EntitySet="operario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="recursosHumanosModelStoreContainer" CdmEntityContainer="recursosHumanosEntities">
+    <EntitySetMapping Name="administrador">
+      <EntityTypeMapping TypeName="recursosHumanosModel.administrador">
+        <MappingFragment StoreEntitySet="administrador">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="profesion" ColumnName="profesion" />
+          <ScalarProperty Name="creditos" ColumnName="creditos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comentario">
+      <EntityTypeMapping TypeName="recursosHumanosModel.comentario">
+        <MappingFragment StoreEntitySet="comentario">
+          <ScalarProperty Name="idcomentario" ColumnName="idcomentario" />
+          <ScalarProperty Name="cedulaempleado" ColumnName="cedulaempleado" />
+          <ScalarProperty Name="tipocomentario" ColumnName="tipocomentario" />
+          <ScalarProperty Name="comentario1" ColumnName="comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="recursosHumanosModel.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="añoingreso" ColumnName="añoingreso" />
+          <ScalarProperty Name="tipoempleado" ColumnName="tipoempleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingeniero">
+      <EntityTypeMapping TypeName="recursosHumanosModel.ingeniero">
+        <MappingFragment StoreEntitySet="ingeniero">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="area" ColumnName="area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operario">
+      <EntityTypeMapping TypeName="recursosHumanosModel.operario">
+        <MappingFragment StoreEntitySet="operario">
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
