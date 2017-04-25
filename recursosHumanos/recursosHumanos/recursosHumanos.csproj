@@ -211,9 +211,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\principal\index.cshtml" />
-    <Content Include="Views\Empleado\registrarEmpleado.cshtml" />
-    <Content Include="Views\Empleado\detalleEmpelado.cshtml" />
+    <Content Include="Views\Empleado\Registrar.cshtml" />
     <Content Include="Views\Empleado\Consultar.cshtml" />
+    <Content Include="Views\Empleado\Editar.cshtml" />
+    <Content Include="Views\Empleado\Detalle.cshtml" />
+    <Content Include="Views\Empleado\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -22,6 +22,26 @@ namespace recursosHumanos.Controllers
         }
 
 
+        public ActionResult Registrar() {
+
+            return View();
+        }
+
+        public ActionResult Editar() {
+
+            return View();
+        }
+
+        public ActionResult Detalle() {
+
+            return View();
+        }
+
+        public ActionResult Eliminar() {
+
+            return View();
+        }
+
 
     }
 }
